@@ -1,4 +1,4 @@
-=Bumper Car= 
+# Bumper Car
 
 
 This is to power an older KidZone bumpercar I found on the side of the road. The controller was shot so I swapped in an esp32 and an L298N motor driver connected to a 12 Volt Milwakee battery. 
