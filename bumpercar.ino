@@ -1,41 +1,3 @@
-/*
- * Library Example for L298N Module to control DC motors
- * 
- * This code is to control single motor. For two motor control, please open L298N_DC_2_Motors
- * this code is ready for ESP32
- * Watch video instructions for this code:  https://youtu.be/2JTMqURJTwg
- * 
- * Written by Ahmad Shamshiri on Dec 24, 2019 
- * in Ajax, Ontario, Canada. www.robojax.com
- * 
-  Need wiring diagram from this code: Purchase My course on Udemy.com http://robojax.com/L/?id=62
- * 
-  * 
- * Get this code and other Arduino codes from Robojax.com
-Learn Arduino step by step in structured course with all material, wiring diagram and library
-all in once place. Purchase My course on Udemy.com http://robojax.com/L/?id=62
-
-If you found this tutorial helpful, please support me so I can continue creating 
-content like this. You can support me on Patreon http://robojax.com/L/?id=63
-
-or make donation using PayPal http://robojax.com/L/?id=64
-
- *  * This code is "AS IS" without warranty or liability. Free to be used as long as you keep this note intact.* 
- * This code has been download from Robojax.com
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
- */
-
 #include "Robojax_L298N_DC_motor.h"
 #include <Arduino.h>
 // motor 1 settings
@@ -159,7 +121,7 @@ void loop() {
 
 // Control the left motor based on joystick input
 void controlLeftMotor(bool up, bool down) {
-  const int motorSpeed = 200;
+  const int motorSpeed = 255;
   if (up) {
     // Move forward
     digitalWrite(motorA_in1, HIGH);
@@ -178,12 +140,9 @@ void controlLeftMotor(bool up, bool down) {
   }
 }
 
-
-
 // Control the right motor based on joystick input
 void controlRightMotor(bool up, bool down) {
-  const int motorSpeed = 200;
-
+  const int motorSpeed = 255;
   if (up) {
     // Move forward
     digitalWrite(motorB_in3, HIGH);
@@ -201,108 +160,3 @@ void controlRightMotor(bool up, bool down) {
     analogWrite(motorB_speed, 0);
   }
 }
-
-//
-//
-//
-//
-//
-//
-//  int rightBState = digitalRead(rightB); // Read the state of the button
-//  
-//  // LOW means the button is pressed (connected to ground)
-//  if (rightBState == LOW) {
-//    Serial.println("rightBState is pressed!");
-//    robot.rotate(motor2, 100, CCW);
-//  } else {
-//    robot.brake(motor2);
-//    Serial.println("rightBState is NOT pressed!");
-//  }
-//
-//  int rightFState = digitalRead(rightF); // Read the state of the button
-//
-//  // LOW means the button is pressed (connected to ground)
-//  if (rightFState == LOW) {
-//    Serial.println("rightFState is pressed!");
-//    robot.rotate(motor2, 100, CCW);
-//  } else {
-//    robot.brake(motor2);
-//    Serial.println("rightFState is NOT pressed!");
-//  }
-
-
-//  int leftFState = digitalRead(leftF); // Read the state of the button
-//
-//  // LOW means the button is pressed (connected to ground)
-//  if (leftFState == LOW) {
-//    Serial.println("Button is pressed!");
-//    robot.rotate(motor2, 100, CW);//run motor1 at 60% speed in CW direction
-//  } else {
-//    robot.brake(motor2);
-//    Serial.println("leftFState is not pressed!");
-//  }
-//
-//  int leftBState = digitalRead(leftB); // Read the state of the button
-//
-//  // LOW means the button is pressed (connected to ground)
-//  if (leftBState == LOW) {
-//    Serial.println("Button is pressed!");
-//    robot.rotate(motor2, 100, CCW);//run motor1 at 60% speed in CW direction
-//  } else {
-//    robot.brake(motor2);
-//    Serial.println("leftBState is not pressed!");
-//  }
-//
-//  delay(100); // Small delay for stability
-
-
-  
-//  robot.rotate(motor1, 100, CW);//run motor1 at 60% speed in CW direction
-//  robot.rotate(motor2, 100, CCW);//run motor1 at 60% speed in CW direction
-//  
-//  delay(2000);
-//
-//  robot.brake(motor1);
-//  robot.brake(motor2); 
-//  delay(2000);
-
-
-
-
-
-
-
-
-
-//
-//  robot.rotate(motor1, 100, CW);//run motor1 at 60% speed in CW direction
-//  delay(3000);
-//  
-//  robot.rotate(motor2, 100, CCW);//run motor1 at 60% speed in CW direction
-//  
-//  robot.brake(1);
-//  robot.brake(2);   
-//  delay(2000);  
-//
-//  for(int i=0; i<=100; i++)
-//  {
-//    robot.rotate(motor1, i, CW);// turn motor1 with i% speed in CW direction (whatever is i) 
-//    delay(100);
-//  }
-//  delay(2000);
-//  
-//  robot.brake(1);
-//  delay(2000);  
-//  
-//  for(int i=0; i<=100; i++)
-//  {
-//    robot.rotate(motor2, i, CW);// turn motor1 with i% speed in CW direction (whatever is i) 
-//    delay(100);
-//  }
-//  delay(2000);
-//  
-//  robot.brake(2);
-//  delay(2000);    
-//  // Robojax L298N Library. Watch video instruciton https://youtu.be/2JTMqURJTwg
-
-//}
