@@ -41,12 +41,6 @@ Robojax_L298N_DC_motor robot(IN1, IN2, ENA, CHA,  IN3, IN4, ENB, CHB);
 // fore two motors with debut information
 //Robojax_L298N_DC_motor robot(IN1, IN2, ENA, CHA, IN3, IN4, ENB, CHB, true);
 
-
-//const int rightB = 17;
-//const int rightF = 14;
-//const int leftB = 12;
-//const int leftF = 13;
-
 // Joystick pins (digital)
 
 const int joystickLeftUpPin = GPIO_NUM_13;
@@ -55,11 +49,18 @@ const int joystickRightUpPin = GPIO_NUM_14;
 const int joystickRightDownPin = GPIO_NUM_27;
 
 
+pinMode(motorA_in1, OUTPUT);
+pinMode(motorA_in2, OUTPUT);
+pinMode(motorA_speed, OUTPUT); 
+pinMode(motorB_in3, OUTPUT);
+pinMode(motorB_in4, OUTPUT);
+pinMode(motorB_speed, OUTPUT); 
+  
 
-const int rightB = GPIO_NUM_27;
-const int rightF = GPIO_NUM_14;
-const int leftB = GPIO_NUM_12;
-const int leftF = GPIO_NUM_13;
+//const int rightB = GPIO_NUM_27;
+//const int rightF = GPIO_NUM_14;
+//const int leftB = GPIO_NUM_12;
+//const int leftF = GPIO_NUM_13;
 
 
 // TTGO LORA SX1278 ESP32 0.96 OLED 128Mt bit (16MB) 433Mhz
@@ -116,7 +117,7 @@ void loop() {
   Serial.print(", Right Down: ");
   Serial.println(rightDown);
 
-  delay(50); // Small delay for stability
+  delay(20); // Small delay for stability
 }
 
 // Control the left motor based on joystick input
